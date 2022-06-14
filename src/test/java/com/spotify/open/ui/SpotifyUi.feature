@@ -17,3 +17,4 @@ Feature: SpotifyWebTest
     And waitFor(searchButton)
     And input(searchButton,songName)
     And retry().click(addToPlaylist)
+    * delay(5000)

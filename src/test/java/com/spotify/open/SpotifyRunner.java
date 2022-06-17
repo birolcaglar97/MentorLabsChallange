@@ -7,8 +7,14 @@ public class SpotifyRunner {
     Karate testApi() {
         return Karate.run("api/SpotifyApi.feature").relativeTo(getClass());
     }
+
     @Karate.Test
     Karate testUi() {
         return Karate.run("ui/SpotifyUi.feature").relativeTo(getClass());
+    }
+
+    @Karate.Test
+    Karate testHibrit() {
+        return Karate.run("hibrit/SpotifyHibrit.feature").relativeTo(getClass());
     }
 }

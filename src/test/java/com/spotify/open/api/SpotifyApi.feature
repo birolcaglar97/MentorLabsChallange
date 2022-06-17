@@ -3,8 +3,7 @@ Feature: SpotifyApiTest
   Background:
     # UserID ve Token giriniz
     * url apiUrl
-    * def userID = "31yxpem4knstf7hbpps3pmwjiqoe"
-    * def apiToken = "BQCp61MuSYMoTOiKqPCwYE34VfkItoB1jgptVNkG2Ts9HgTBWzTV04omBZWg82SmqsWv08sN7arbuQNUOb2d-U1Hdn1w6Me0edzBaryRBaFKSirH-zt3YSUXyXLzE-Oc6KidlYdKILRQ2WLTyXUC7jdTlARCI-kOhh-ZfkcWAi59VyQCgBeEu_A6KzzwEk8KQyoJMe5s_O_gPyOPEPmf8w7NZ4trypDivqPvV72h6Xm2wcyVs7PquQ7LPNMbyO8hCYW5M4heuQ6YNrGuGT8hCy7Ofg"
+    * def userID = apiUserID
     * def size = function(o){ return o.size() }
     * def random = function(max){ return Math.floor(Math.random() * max) }
     * def searchParams = {q:'Bohemian Rhapsody',type:'track'}

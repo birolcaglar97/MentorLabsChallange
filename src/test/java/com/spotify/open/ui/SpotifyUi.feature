@@ -3,10 +3,11 @@ Feature: SpotifyWebTest
   Background:
     * configure driver = {type :'chromedriver' , showDriverLog : false, showBrowserLog : false, executable : 'C:/opt/chromedriver.exe'}
     * configure retry = { count: 10, interval: 1000 }
+
   Scenario: MentorLabsUiTest
     Given driver webUrl
     * maximize()
-    When click(dashboardLoginButton)
+    When retry().click(dashboardLoginButton)
     And input(loginUsername,email)
     And input(loginPassword,password)
     And click(loginButton)

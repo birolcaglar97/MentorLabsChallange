@@ -69,10 +69,6 @@ https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.
 * You must change userID and apiToken in features to work api test.
 * Api testin çalışabilmesi için userID ve apiToken değişkenleri değiştirilmelidir.
 
-    
-    def userID 
-    def apiToken 
-
 **Intellij**
 https://www.jetbrains.com/idea/download/#section=windows (Maven, Gradle or Eclipse to be installed.)
 

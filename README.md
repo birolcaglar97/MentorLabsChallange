@@ -13,6 +13,16 @@ This sample project includes api and ui testing with Karate
     Karate testUi() {
         return Karate.run("SpotifyUi.feature").relativeTo(getClass());
     }
+## Hibrit Runner
+    @Karate.Test
+    Karate testHibrit() {
+        return Karate.run("hibrit/SpotifyHibrit.feature").relativeTo(getClass());
+    }
+## EndToEnd Runner
+    @Karate.Test
+    Karate testEndToEnd() {
+        return Karate.run("hibrit/SpotifyEndToEnd.feature").relativeTo(getClass());
+    }
 
 # Steps
 ### UI Steps
@@ -30,6 +40,25 @@ This sample project includes api and ui testing with Karate
 * Bir çalma listesi oluşturulur.
 * "Bohemian Rhapsody" ismi ile şarkı search isteği gerçekleştirilir.
 * İlgili arama sonucu içerisinden herhangi bir şarkı, oluşturulan çalma listesine eklenir.
+
+### Hibrit Steps
+* Sisteme başarılı şekilde giriş yapılır.
+* "MentorLabs Faz2" çalma listesi oluşturulur.(API)
+* "The Final Countdown" şarkısı listeye eklenir.(API)
+* İlgili parça oynatılır.
+* Doğru parçanın oynatıldığı kontrol edilir.(API)
+
+### EndToEnd Steps
+* Sisteme başarılı şekilde giriş yapılır.
+* Arama kısmından "Listeler" açılır.
+* "En İyi 50 - Türkiye" çalma listesi açılır.
+* İlgili çalma listesinden 5 adet şarkı beğenilen şarkılara eklenir.(API)
+* Kullanıcı profiline gidilir.
+* Kullanıcı adı "MentorLabs Challange" olarak değiştirilir.
+* "Beğenilen Şarkılar" açılır.
+* İlgili listeden şarkı çalınır.
+* Sistemden çıkış işlemi sağlanır. 
+
 
 # Getting Started (Gereksinimler) 
 Karate requires Java 8 (at least version 1.8.0_112 or greater) (Java jdk 1.8 sürümü ve üzeri)

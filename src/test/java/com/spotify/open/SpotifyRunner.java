@@ -17,4 +17,9 @@ public class SpotifyRunner {
     Karate testHibrit() {
         return Karate.run("hibrit/SpotifyHibrit.feature").relativeTo(getClass());
     }
+    @Karate.Test
+    Karate testEndToEnd() {
+        return Karate.run("hibrit/SpotifyEndToEnd.feature").relativeTo(getClass());
+    }
+
 }

@@ -21,6 +21,12 @@ Feature: SpotifyEndToEnd
     * path 'v1/playlists/'+playlistId+'/tracks'
     * header Authorization = 'Bearer '+apiToken
     * method get
+    * def tracksId = { id1:#(response.items[0].track.uri.split(':')[2]) ,id2:#(response.items[1].track.uri.split(':')[2]), id3:#(response.items[2].track.uri.split(':')[2]), id4:#(response.items[3].track.uri.split(':')[2]), id5:#(response.items[4].track.uri.split(':')[2]) }
+    * path 'v1/me/tracks'
+    * header Authorization = 'Bearer '+apiToken
+    * def body = {"ids": [#(tracksId.id5),#(tracksId.id4),#(tracksId.id3),#(tracksId.id2),#(tracksId.id1)] }
+    * request body
+    * method put
     * retry().click(cookiesClose)
     * retry().click(dashboardAccountButton)
     * retry().click(dashboardMyAccount)
@@ -28,9 +34,8 @@ Feature: SpotifyEndToEnd
     * clear(usernameEdit)
     * retry().input(usernameEdit,newUsername)
     * retry().click(saveUsername)
-    * def tracksId = { id1:#(response.items[0].track.uri.split(':')[2]) ,id2:#(response.items[1].track.uri.split(':')[2]), id3:#(response.items[2].track.uri.split(':')[2]), id4:#(response.items[3].track.uri.split(':')[2]), id5:#(response.items[4].track.uri.split(':')[2]) }
     * retry().click(favoriteSongs)
     * retry().click(playButtonOnPlaylistPage)
-    * delay(30000)
+    * delay(10000)
     * retry().click(dashboardAccountButton)
     * retry().click(dashboardLogoutButton)

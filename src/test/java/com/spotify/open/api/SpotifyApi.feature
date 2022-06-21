@@ -12,27 +12,18 @@ Feature: SpotifyApiTest
   Scenario: MentorLabs Api Test
     Given path "v1/users/"+userID+"/playlists"
     And header Authorization = 'Bearer '+apiToken
-    And header Content-type = 'application/json'
-    And header Accept = 'application/json'
     And request {"name": "MentorLabs Challange Api", "description": "Challange Accepted","public": true }
     When method post
     * def id = response.id
-
     Given path 'v1/search'
     And header Authorization = 'Bearer '+apiToken
-    And header Content-type = 'application/json'
-    And header Accept = 'application/json'
-
     And params searchParams
     When method get
     * def size = karate.sizeOf(karate.jsonPath(response,"$.['tracks']['items'][*]"))
     * def uri = karate.jsonPath(response,"$.['tracks']['items']["+random(size)+"]['uri']")
     Then status 200
-
     Given path "v1/playlists/"+id+"/tracks"
     And header Authorization = 'Bearer '+apiToken
-    And header Content-type = 'application/json'
-    And header Accept = 'application/json'
     And request {uris:[#(uri)]}
     When method post
     Then status 201

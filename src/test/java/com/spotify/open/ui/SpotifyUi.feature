@@ -5,17 +5,17 @@ Feature: SpotifyWebTest
     * configure retry = { count: 10, interval: 1000 }
 
   Scenario: MentorLabsUiTest
-    Given driver webUrl
+    * driver webUrl
     * maximize()
-    When retry().click(dashboardLoginButton)
-    And input(loginUsername,email)
-    And input(loginPassword,password)
-    And click(loginButton)
-    And retry().click(createPlaylist)
-    And retry().click(playlistNameChange)
-    And input(changePlaylistName,playlistName)
-    And retry().click(savePlaylistName)
-    And waitFor(searchButton)
-    And input(searchButton,songName)
-    And retry().click(addToPlaylist)
+    * retry().click(dashboardLoginButton)
+    * input(loginUsername,email)
+    * input(loginPassword,password)
+    * click(loginButton)
+    * retry().click(createPlaylist)
+    * retry().click(playlistNameChange)
+    * input(changePlaylistName,playlistName)
+    * retry().click(savePlaylistName)
+    * waitFor(searchButton)
+    * input(searchButton,songName)
+    * retry().click(addToPlaylist)
     * delay(5000)

@@ -11,39 +11,31 @@ Feature: SpotifyApiTest
   Scenario: MentorLabsFaz2
     Given driver webUrl
     * maximize()
-    When retry().click(dashboardLoginButton)
-    And input(loginUsername,email)
-    And input(loginPassword,password)
-    And click(loginButton)
-    And path "v1/users/"+userID+"/playlists"
-    And header Authorization = 'Bearer '+apiToken
-    And header Content-type = 'application/json'
-    And header Accept = 'application/json'
-    And request {"name": "MentorLabs Faz2", "description": "Challange Accepted","public": true }
-    And method post
+    * retry().click(dashboardLoginButton)
+    * input(loginUsername,email)
+    * input(loginPassword,password)
+    * retry().click(loginButton)
+    * path "v1/users/"+userID+"/playlists"
+    * header Authorization = 'Bearer '+apiToken
+    * request {"name": "MentorLabs Faz2", "description": "Challange Accepted","public": true }
+    * method post
     * def id = response.id
-    And path 'v1/search'
-    And header Authorization = 'Bearer '+apiToken
-    And header Content-type = 'application/json'
-    And header Accept = 'application/json'
-    And params searchParams
-    And method get
+    * path 'v1/search'
+    * header Authorization = 'Bearer '+apiToken
+    * params searchParams
+    * method get
     * def uri = response.tracks.items[0].uri
-    Then status 200
-    And path "v1/playlists/"+id+"/tracks"
-    And header Authorization = 'Bearer '+apiToken
-    And header Content-type = 'application/json'
-    And header Accept = 'application/json'
-    And request {uris:[#(uri)]}
-    And method post
-    Then status 201
-    And retry().click(goToPlaylist)
-    And retry().click(playButtonOnPlaylistPage)
+    * status 200
+    * path "v1/playlists/"+id+"/tracks"
+    * header Authorization = 'Bearer '+apiToken
+    * request {uris:[#(uri)]}
+    * method post
+    * status 201
+    * retry().click(goToPlaylist)
+    * retry().click(playButtonOnPlaylistPage)
     * delay(5000)
-    And path 'v1/me/player/currently-playing'
-    And header Authorization = 'Bearer '+apiToken
-    And header Content-type = 'application/json'
-    And header Accept = 'application/json'
-    And method get
+    * path 'v1/me/player/currently-playing'
+    * header Authorization = 'Bearer '+apiToken
+    * method get
     * def recentlyPlaying = karate.jsonPath(response, "$.['item'].['name']")
-    Then match recentlyPlaying == hibritSongName
+    * match recentlyPlaying == hibritSongName

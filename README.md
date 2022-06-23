@@ -55,7 +55,11 @@ This sample project includes api and ui testing with Karate
 * İlgili çalma listesinden 5 adet şarkı beğenilen şarkılara eklenir.(API)
 * Kullanıcı profiline gidilir.
 * Kullanıcı adı "MentorLabs Challange" olarak değiştirilir.
-* "Beğenilen Şarkılar" açılır.
+* "Beğenilen Şarkılar" açılır ve şarkı çalınır.
+* İlgili listeden rastgele 3 şarkı seçilir. (API)
+* "MentorLabs EndToEnd" adında bir çalma listesi oluşturulur.
+* İlgili listeye seçilen şarkılar eklenir. (API)
+* Oluşturulan listeye gidilir ve şarkı çalınır.
 * İlgili listeden şarkı çalınır.
 * Sistemden çıkış işlemi sağlanır. 
 

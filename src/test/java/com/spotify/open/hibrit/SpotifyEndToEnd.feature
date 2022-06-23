@@ -23,15 +23,16 @@ Feature: SpotifyEndToEnd
     * path 'v1/playlists/'+playlistId+'/tracks'
     * header Authorization = 'Bearer '+apiToken
     * method get
-    * def id =  response.items[0].track.id
-    * def id2 =  response.items[1].track.id
-    * def id3 =  response.items[2].track.id
-    * def id4 =  response.items[3].track.id
-    * def id5 =  response.items[4].track.id
-    * def body = { "ids": [ #(id1),#(id2),#(id3),#(id4),#(id5) ] }
+    * def id1 = response.items[0].track.id
+    * def id2 = response.items[1].track.id
+    * def id3 = response.items[2].track.id
+    * def id4 = response.items[3].track.id
+    * def id5 = response.items[4].track.id
+    * def trackIds = {ids:[#(id1),#(id2),#(id3),#(id4),#(id5)]}
+    * print trackIds
     * path 'v1/me/tracks'
     * header Authorization = 'Bearer '+apiToken
-    * request body
+    * request trackIds
     * method put
     * retry().click(cookiesClose)
     * retry().click(dashboardAccountButton)

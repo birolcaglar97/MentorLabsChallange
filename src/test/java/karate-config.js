@@ -9,7 +9,7 @@ function fn() {
     webUrl : 'https://open.spotify.com',
     apiUrl : 'https://api.spotify.com',
     apiUserID : '31yxpem4knstf7hbpps3pmwjiqoe',
-    apiToken : 'BQAsOZMuad6fUeHOqU8HvzNjEWwLjfWomCapA1GatqS89Bwa3hMoa33dSHB2yvCtFx0o3DO8fTXBNlGgqX38RML2nMrZ0lA1ha87gFjGhmXX1hGpPXoECZLAadYYhOLj2gyY09RtjV7lezSBEAkFgDsryFRXdaUNZ7kRSHaQTgdc7t1sHz1IDXgguS3G3U4e7b6GLzoEjSPqJKO4wP7SuQUOP9tZKnFigC0GY6BpmlQd6oVO4lUMSr0F4D2LtZ6eSdYyHjB7hcLzT2Qq-2PyCwhKMNcI_iMDFjFVmr-5',
+    apiToken : 'BQDWAkfY9kqmoKhBCErT9bTq3mCOcAlIcuN_-r3iUuMWouzSIre93dvcB1BEE5vuRXdEAfag4JQRY21DeGUs8BO6IKZik8MUyxtb1lAtNVCahwwmlCFIXnQML4zfvTJPKFDfrFDWWzY5GoLEp8QB-J9I1XnttFVKfobfB-RNkALRRpJGiCFyzfNhh7meSnApPPi__ejPObp0Rrm2djtqxpFD_jtMxodpJV5tOrGJRt4Y0fd4YKluGItltoBMXmRsa9cVte8FH3NJJeppNf6Ex3zdH6fqayaw1X0EcEQ_',
     cookiesClose : "//*[@class='onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']",
     email : 'seleniumprojemail@gmail.com',
     password : 'P@$$w0rd..!',

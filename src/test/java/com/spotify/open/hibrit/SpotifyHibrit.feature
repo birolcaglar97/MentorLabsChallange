@@ -27,7 +27,7 @@ Feature: SpotifyApiTest
     * def uri = response.tracks.items[0].uri
     * status 200
     * path "v1/playlists/"+id+"/tracks"
-    * header Authorization = 'Bearer '+apiToken
+    * header Authorization = 'Bearer ' + apiToken
     * request {uris:[#(uri)]}
     * method post
     * status 201

@@ -23,9 +23,12 @@ Feature: SpotifyEndToEnd
     * path 'v1/playlists/'+playlistId+'/tracks'
     * header Authorization = 'Bearer '+apiToken
     * method get
-    * print response
-
-* def body = {"ids":[#(response.items[0].id),#(response.items[1].id),#(response.items[2].id),#(response.items[3].id),#(response.items[4].id),#(response.items[5].id),#(response.items[6].id),#(response.items[7].id),#(response.items[8].id),#(response.items[9].id)}
+    * def id =  response.items[0].track.id
+    * def id2 =  response.items[1].track.id
+    * def id3 =  response.items[2].track.id
+    * def id4 =  response.items[3].track.id
+    * def id5 =  response.items[4].track.id
+    * def body = { "ids": [ #(id1),#(id2),#(id3),#(id4),#(id5) ] }
     * path 'v1/me/tracks'
     * header Authorization = 'Bearer '+apiToken
     * request body
@@ -44,9 +47,9 @@ Feature: SpotifyEndToEnd
     * method get
     * def favTracks = response
     * def size = karate.sizeOf(karate.jsonPath(favTracks,"$.['items'][*]"))
-    * def uri1 =  favTracks.items[random(size)].track.uri
-    * def uri2 =  favTracks.items[random(size)].track.uri
-    * def uri3 =  favTracks.items[random(size)].track.uri
+    * def uri1 =  favTracks.items[random(size-1)].track.uri
+    * def uri2 =  favTracks.items[random(size-1)].track.uri
+    * def uri3 =  favTracks.items[random(size-1)].track.uri
     * path "v1/users/"+userID+"/playlists"
     * header Authorization = 'Bearer '+apiToken
     * request {"name": "MentorLabs EndToEnd", "description": "Challange Accepted","public": true }
@@ -63,4 +66,3 @@ Feature: SpotifyEndToEnd
     * delay(25000)
     * retry().click(dashboardAccountButton)
     * retry().click(dashboardLogoutButton)
-    """
